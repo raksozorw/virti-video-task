@@ -1,4 +1,4 @@
-Clone this repo and run `npm install` then run `npm start` to start.
+Clone (not fork) this repo and run `npm install` then run `npm start` to start.
 
 Render the video found in the public folder on the page. Make it as pretty (or as ugly) as you like. In the public/images folder you will find three images that should render in the following ways during the video playing. Timings are in reference to the current time of the video. Using a native html5 video component is preferred. You can also migrate this to use typescript if you'd prefer.
 
@@ -24,4 +24,4 @@ Feel free to ask any questions, as well as to have fun and expand on the specifi
 
 If you're struggling, take notes about areas you are having trouble with, proposed solutions you have considered etc.
 
-Provide a video or text-documented walkthrough and overview of your development process where you describe the process behind building the app.
+Please send us a link to your new repo. Alongside this, please provide a video or text-documented walkthrough and overview of your development process where you describe the process behind building the app.
