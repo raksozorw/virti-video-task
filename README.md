@@ -1,4 +1,4 @@
-Clone this repo and run `npm start` to run.
+Clone this repo and run `npm install` then run `npm start` to start.
 
 Render the video found in the public folder on the page. Make it as pretty (or as ugly) as you like. In the public/images folder you will find three images that should render in the following ways during the video playing. Timings are in reference to the current time of the video. Using a native html5 video component is preferred.
 
