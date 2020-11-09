@@ -23,3 +23,5 @@ Image 3:
 Feel free to ask any questions, as well as to have fun and expand on the specification as much as you like (e.g. custom controls, fullscreen toggle button, a button that runs away from your cursor). 
 
 If you're struggling, take notes about areas you are having trouble with, proposed solutions you have considered etc.
+
+Provide a video or text-documented walkthrough and overview of your development process where you describe the process behind building the app.
