@@ -26,4 +26,4 @@ Feel free to ask any questions, as well as to have fun and expand on the specifi
 
 If you're struggling, take notes about areas you are having trouble with, proposed solutions you have considered etc.
 
-Please send us a link to your new repo. Alongside this, please provide a screen recorded video or text-documented walkthrough and overview of your development process where you describe the process behind building the app and run through any thoughts you had, decisions you made, concerns that came up etc.
+Please create a new git repository with your project and send us a link to it. Alongside this, please provide a screen recorded video or text-documented walkthrough and overview of your development process where you describe the process behind building the app and run through any thoughts you had, decisions you made, concerns that came up etc.
