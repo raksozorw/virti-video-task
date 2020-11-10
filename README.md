@@ -4,21 +4,23 @@ Render the video found in the public folder on the page. Make it as pretty (or a
 
 Image 1:
 - shows at 3500ms
-- shows for 1000ms
-- shows up once (i.e. when rewinding it should not show up again).
+- shows for 5000ms
 - shows in top left
+- shows up once (i.e. when rewinding it should not show up again)*
 
 Image 2:
 - shows at 6000ms
 - shows for 2000ms
-- shows up twice
 - shows in top right
+- shows up twice*
 
 Image 3:
 - shows at 7000ms
 - shows for 1500ms
-- shows up three times
 - shows up in centre
+- shows up three times*
+
+* extra bonus objective
 
 Feel free to ask any questions, as well as to have fun and expand on the specification as much as you like (e.g. custom controls, fullscreen toggle button, a button that runs away from your cursor). 
 
