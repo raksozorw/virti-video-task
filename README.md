@@ -7,19 +7,19 @@ Render the video found in the public folder on the page. Make it as pretty (or a
 **Image 1**:
 - shows at **3500ms**
 - shows for **5000ms** (i.e. the image is visible from 3500ms-8500ms)
-- shows in **top left** of the video (inside)
+- shows in **top left** of the video
 - \*\*shows up **once** (i.e. when rewinding it should not show up again)
 
 **Image 2:**
 - shows at **6000ms**
 - shows for **2000ms** (i.e. 6000ms-8000ms)
-- shows in **top right** of the video (inside)
+- shows in **top right** of the video
 - \*\*shows up **twice**
 
 **Image 3:**
 - shows at **7000ms**
 - shows for **1500ms** (i.e. 7000ms-8500ms)
-- shows up in **centre** of the video (inside)
+- shows up in **centre** of the video
 - \*\*shows up **three** times
 
 \*\* extra bonus objective
