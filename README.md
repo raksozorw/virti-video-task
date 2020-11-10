@@ -1,26 +1,28 @@
+
+
 Clone (not fork) this repo and run `npm install` then run `npm start` to start.
 
-Render the video found in the public folder on the page. Make it as pretty (or as ugly) as you like. In the public/images folder you will find three images that should render in the following ways during the video playing. Timings are in reference to the current time of the video. Using a native html5 video component is preferred. You can also migrate this to use typescript if you'd prefer.
+Render the video found in the public folder on the page. Make it as pretty (or as ugly) as you like. In the **public/images** folder you will find three images that should render in the following ways during the video playing. Timings are in reference to the current time of the video. Using a **native html5 video component** is preferred. You can also migrate the project to use typescript if you'd prefer (or create a separate react repository and import the assets).
 
-Image 1:
-- shows at 3500ms
-- shows for 5000ms (i.e. the image is visible from 3500ms-8500ms)
-- shows in top left
-- shows up once (i.e. when rewinding it should not show up again)*
+**Image 1**:
+- shows at **3500ms**
+- shows for **5000ms** (i.e. the image is visible from 3500ms-8500ms)
+- shows in **top left**
+- \*\*shows up **once** (i.e. when rewinding it should not show up again)
 
-Image 2:
-- shows at 6000ms
-- shows for 2000ms (i.e. 6000ms-8000ms)
-- shows in top right
-- shows up twice*
+**Image 2:**
+- shows at **6000ms**
+- shows for **2000ms** (i.e. 6000ms-8000ms)
+- shows in **top right**
+- \*\*shows up **twice**
 
-Image 3:
-- shows at 7000ms
-- shows for 1500ms (i.e. 7000ms-8500ms)
-- shows up in centre
-- shows up three times*
+**Image 3:**
+- shows at **7000ms**
+- shows for **1500ms** (i.e. 7000ms-8500ms)
+- shows up in **centre**
+- \*\*shows up **three** times
 
-* extra bonus objective
+\*\* extra bonus objective
 
 Feel free to ask any questions, as well as to have fun and expand on the specification as much as you like (e.g. custom controls, fullscreen toggle button, a button that runs away from your cursor). 
 
