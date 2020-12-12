@@ -51,6 +51,7 @@ video {
 }
 
 .image3 {
-  bottom: 0;
-  right: 0;
+  top: 50%; /* position the top  edge of the element at the middle of the parent */
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
