@@ -1,11 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import VideoProvider from "./context";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <VideoProvider>
+      <App />
+    </VideoProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
