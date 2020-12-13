@@ -7,6 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: radial-gradient(hsl(180, 100%, 90%), hsl(0, 0%, 75%));
   text-align: center;
+  perspective: 500px;
 }
 
 code {
@@ -27,9 +28,14 @@ code {
   width: 800px;
   max-width: 100%;
   position: relative;
+  transform-style: preserve-3d;
+  border-radius: 25px;
+  box-shadow: 0 0 0 10px white, 0 0 20px 5px rgb(173, 173, 173);
 }
 
 video {
+  border-radius: 25px;
+
   width: 100%;
 }
 

@@ -9,6 +9,7 @@ import Image from "./Image";
 export default function VideoPlayer() {
   const ctx = useContext(VideoContext);
   const videoRef = useRef(null);
+  const [rotate, setRotate] = useState({ transform: "rotateY(0)" });
 
   const handleTimeUpdate = (e) => {
     let current = Math.round((e.target.currentTime * 1000) / 250) * 250;
@@ -16,10 +17,28 @@ export default function VideoPlayer() {
     ctx.setTime(current);
   };
 
+  const handleMouseMove = (e) => {
+    let xAxis = (window.innerWidth / 2 - e.pageX) / 15;
+    let yAxis = (window.innerHeight / 2 - e.pageY) / 15;
+
+    setRotate({ transform: `rotateY(${xAxis}deg) rotateX(${yAxis}deg)` });
+    console.log(rotate);
+  };
+
+  const handleMouseLeave = () => {
+    setRotate({ transform: `rotateY(0deg) rotateX(0deg)`, transition: "0.5s" });
+  };
+
   return (
     <div className='video-outer-div'>
-      <div className='video-inner-div'>
-        <video controls ref={videoRef} onTimeUpdate={handleTimeUpdate}>
+      <div
+        className='video-inner-div'
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        style={rotate}
+        ref={videoRef}
+      >
+        <video controls onTimeUpdate={handleTimeUpdate}>
           <source src={video} type='video/mp4' />
           Sorry, your browser doesn't support embedded videos.
         </video>
