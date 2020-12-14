@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: radial-gradient(hsl(180, 100%, 90%), hsl(0, 0%, 75%));
+
   text-align: center;
   perspective: 500px;
 }
@@ -17,28 +18,26 @@ code {
 
 /* ------------------------ Video Player */
 
-.video-outer-div {
-  display: grid;
-  place-items: center;
-  margin: auto;
-  width: 100%;
-}
-
 .video-inner-div {
-  margin-top: 80px;
+  margin: 0px auto 0px auto;
   width: 800px;
-  max-width: 100%;
+  max-width: 95%;
+
   position: relative;
   transform-style: preserve-3d;
   border-radius: 25px;
-  box-shadow: 0 0 0 10px rgba(255, 242, 242, 0.5),
-    0 0 20px 5px rgb(173, 173, 173);
+  box-shadow: 0 0 10px rgba(255, 242, 242, 0.5), 0 0 20px 5px rgb(173, 173, 173);
+}
+
+.darken {
+  padding-top: 80px;
 }
 
 video {
   border-radius: 25px;
 
   width: 100%;
+  max-width: 100%;
 }
 
 video:focus {
@@ -70,23 +69,33 @@ video:focus {
 
 /* --------------------------- Controls */
 .controls {
-  margin-top: 50px;
+  margin: auto;
+  padding: 50px 0px;
   display: grid;
+  place-items: center;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
+  perspective: 400px;
+  width: 80vw;
+  max-width: 800px;
+}
+
+@media screen and (max-width: 1150px) {
+  .controls {
+    width: 100vw;
+    padding: 0px 0px;
+  }
 }
 
 .controls button {
-  color: rgb(122, 214, 209);
+  /* color: rgb(122, 214, 209); */
   background-color: rgba(255, 255, 255, 0);
   border: 0px;
   padding: 15px;
-  box-shadow: 0px 0px 6px rgba(151, 151, 151, 0.486);
-
   border-radius: 25px;
   font-size: 2rem;
   cursor: pointer;
-  transition: 0.1s;
+  transition: 0.6s;
 }
 
 .controls button:active {
@@ -95,4 +104,71 @@ video:focus {
 
 .controls button:focus {
   outline: 0;
+}
+
+/* ------------------------ CUBE */
+
+.scene {
+  width: 200px;
+  height: 200px;
+  margin: 80px;
+  perspective: 500px;
+}
+
+.cube {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px);
+  transition: transform 1s;
+}
+
+.cube__face {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  line-height: 200px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  background-image: radial-gradient(hsl(0, 0%, 75%), hsl(180, 100%, 90%));
+
+  text-align: center;
+  box-shadow: 0px 0px 6px rgba(151, 151, 151, 0.486);
+}
+
+.cube__face--front {
+  transform: rotateY(0deg) translateZ(100px);
+}
+.cube__face--right {
+  transform: rotateY(90deg) translateZ(100px);
+}
+.cube__face--back {
+  transform: rotateY(180deg) translateZ(100px);
+}
+.cube__face--left {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+.cube__face--top {
+  transform: rotateX(90deg) translateZ(100px);
+}
+.cube__face--bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+@media screen and (max-width: 1150px) {
+  .controls {
+    transform: scale(0.7);
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .controls {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
 }

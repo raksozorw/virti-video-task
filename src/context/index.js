@@ -5,6 +5,8 @@ export const VideoContext = createContext(null);
 export default function VideoProvider({ children }) {
   const [title, setTitle] = useState("Virti");
   const [time, setTime] = useState(0);
+  const [playing, setPlaying] = useState(false);
+  const [hoverOnVideo, setHoverOnVideo] = useState(false);
   const [playCount, setPlayCount] = useState({
     image1: 0,
     image2: 0,
@@ -20,6 +22,10 @@ export default function VideoProvider({ children }) {
         setTime,
         playCount,
         setPlayCount,
+        hoverOnVideo,
+        setHoverOnVideo,
+        playing,
+        setPlaying,
       }}
     >
       {children}

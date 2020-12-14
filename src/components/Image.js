@@ -2,6 +2,7 @@ import React from "react";
 import image1 from "../assets/images/image1.png";
 import { useContext, useEffect, useState } from "react";
 import { VideoContext } from "../context";
+import Cube from "./Cube";
 
 export default function Image(props) {
   const ctx = useContext(VideoContext);

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState, useCallback } from "react";
+import { useContext, useRef, useState } from "react";
 import { VideoContext } from "../context";
 import video from "../assets/Big_Buck_Bunny_1080_10s_5MB.mp4";
 import image1 from "../assets/images/image1.png";
@@ -13,11 +13,6 @@ export default function VideoPlayer() {
   const videoTestRef = useRef(null);
 
   const [rotate, setRotate] = useState({ transform: "rotateY(0)" });
-
-  //   const handleTimeUpdate = (e) => {
-  //     let current = Math.round((e.target.currentTime * 1000) / 250) * 250;
-  //     ctx.setTime(current);
-  //   };
 
   const handleMouseMove = (e) => {
     let xAxis = (window.innerWidth / 2 - e.pageX) / 15;
@@ -35,16 +30,7 @@ export default function VideoPlayer() {
     const timestamp = videoTestRef.current.currentTime * 1000;
     console.log(timestamp);
     ctx.setTime(timestamp);
-    // setTimeout(() => {
-    //   const timestamp = videoTestRef.current.currentTime * 1000;
-    //   console.log(timestamp);
-    //   ctx.setTime(timestamp);
-    // }, 1000);
   };
-
-  //   useEffect(() => {
-  //     timer();
-  //   }, [ctx.time]);
 
   return (
     <div className='video-outer-div'>
@@ -54,8 +40,19 @@ export default function VideoPlayer() {
         onMouseLeave={handleMouseLeave}
         style={rotate}
         ref={videoRef}
+        onMouseOver={() => ctx.setHoverOnVideo(true)}
+        onMouseOut={() => ctx.setHoverOnVideo(false)}
       >
-        <video controls onTimeUpdate={timer} ref={videoTestRef}>
+        <video
+          controls
+          onTimeUpdate={timer}
+          ref={videoTestRef}
+          onEnded={() => ctx.setPlaying(false)}
+          onPause={() => ctx.setPlaying(false)}
+          onPlay={() => {
+            ctx.setPlaying(true);
+          }}
+        >
           <source src={video} type='video/mp4' />
           Sorry, your browser doesn't support embedded videos.
         </video>
