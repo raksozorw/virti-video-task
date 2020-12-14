@@ -46,7 +46,7 @@ video:focus {
 
 /*----------------------------- Images */
 
-.test-block img {
+.images img {
   position: absolute;
   z-index: 1;
 }
@@ -62,7 +62,7 @@ video:focus {
 }
 
 .image3 {
-  top: 50%; /* position the top  edge of the element at the middle of the parent */
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -88,7 +88,6 @@ video:focus {
 }
 
 .controls button {
-  /* color: rgb(122, 214, 209); */
   background-color: rgba(255, 255, 255, 0);
   border: 0px;
   padding: 15px;
@@ -135,10 +134,9 @@ video:focus {
   font-size: 40px;
   font-weight: bold;
   color: white;
-  background-image: radial-gradient(hsl(0, 0%, 75%), hsl(180, 100%, 90%));
-
+  background-image: radial-gradient(rgb(191, 191, 191), rgb(204, 255, 255));
+  /* background-color: rgb(204, 255, 255) */
   text-align: center;
-  box-shadow: 0px 0px 6px rgba(151, 151, 151, 0.486);
 }
 
 .cube__face--front {

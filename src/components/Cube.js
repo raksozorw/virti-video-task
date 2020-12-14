@@ -1,12 +1,16 @@
-import React, { useState, useContext } from "react";
-import { VideoContext } from "../context";
+import React from "react";
 
 export default function Cube(props) {
-  const { playing, setPlaying } = useContext(VideoContext);
-
   return (
     <div className='scene'>
-      <div className='cube' style={props.spinOn}>
+      <div
+        className='cube'
+        style={
+          props.spinTrigger
+            ? { transform: "rotateY(180deg)" }
+            : { transform: "rotateY(0deg)" }
+        }
+      >
         <div className='cube__face cube__face--front'> {props.front}</div>
 
         <div className='cube__face cube__face--back'>{props.back}</div>

@@ -1,8 +1,6 @@
 import React from "react";
-import image1 from "../assets/images/image1.png";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { VideoContext } from "../context";
-import Cube from "./Cube";
 
 export default function Image(props) {
   const ctx = useContext(VideoContext);
@@ -12,23 +10,32 @@ export default function Image(props) {
     const oldCount = count;
     setTimeout(() => {
       setCount(oldCount + 1);
-    }, props.end - props.start + 10);
+    }, props.end - props.start);
   };
 
-  useEffect(() => {
-    console.log(ctx.playCount);
-  }, [ctx.playCount]);
+  // as soon as image appears, it counts an appearance
+  // but, if we count right away, it disappears, so we use setTimeout
+  // but, if we pause and the timeout ends, the image disappears
+  // so we also render the image if the playing state is false, and the count is only one less than max
 
   return (
-    ctx.time >= props.start &&
-    ctx.time <= props.end &&
-    count < props.showsUp && (
-      <img
-        src={props.image}
-        alt={props.name}
-        className={props.name}
-        onLoad={handleLoad}
-      ></img>
-    )
+    <div>
+      {ctx.time >= props.start &&
+        ctx.time <= props.end &&
+        count < props.showsUp && (
+          <img
+            src={props.image}
+            alt={props.name}
+            className={props.name}
+            onLoad={handleLoad}
+          ></img>
+        )}
+      {ctx.time >= props.start &&
+        ctx.time <= props.end &&
+        !ctx.playing &&
+        count < props.showsUp + 1 && (
+          <img src={props.image} alt={props.name} className={props.name}></img>
+        )}
+    </div>
   );
 }

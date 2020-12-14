@@ -7,7 +7,7 @@ import Cube from "./Cube";
 export default function Controls(props) {
   const { playing, setPlaying } = useContext(VideoContext);
   const [clicked, setClicked] = useState(false);
-  const buttonStyle = {
+  const buttonIconStyle = {
     color: "white",
     height: "150",
     width: "150",
@@ -43,37 +43,29 @@ export default function Controls(props) {
       <Cube
         front={
           <button onClick={playVideo}>
-            <PlaySVG buttonStyle={buttonStyle} />
+            <PlaySVG buttonIconStyle={buttonIconStyle} />
           </button>
         }
         back={
           <button onClick={pauseVideo}>
-            <PauseSVG buttonStyle={buttonStyle} />
+            <PauseSVG buttonIconStyle={buttonIconStyle} />
           </button>
         }
-        spinOn={
-          playing
-            ? { transform: "rotateY(180deg)" }
-            : { transform: "rotateY(0deg)" }
-        }
+        spinTrigger={playing}
       />
 
       <Cube
         front={
           <button onClick={restartVideo}>
-            <RestartSVG buttonStyle={buttonStyle} />
+            <RestartSVG buttonIconStyle={buttonIconStyle} />
           </button>
         }
         back={
           <button onClick={restartVideo}>
-            <RestartSVG buttonStyle={buttonStyle} />
+            <RestartSVG buttonIconStyle={buttonIconStyle} />
           </button>
         }
-        spinOn={
-          clicked
-            ? { transform: "rotateY(180deg)" }
-            : { transform: "rotateY(0deg)" }
-        }
+        spinTrigger={clicked}
       />
     </div>
   );
