@@ -5,17 +5,19 @@ import image1 from "../assets/images/image1.png";
 import image2 from "../assets/images/image2.png";
 import image3 from "../assets/images/image3.png";
 import Image from "./Image";
+import Controls from "./Controls";
 
 export default function VideoPlayer() {
   const ctx = useContext(VideoContext);
   const videoRef = useRef(null);
+  const videoTestRef = useRef(null);
+
   const [rotate, setRotate] = useState({ transform: "rotateY(0)" });
 
-  const handleTimeUpdate = (e) => {
-    let current = Math.round((e.target.currentTime * 1000) / 250) * 250;
-    // console.log(Math.round((e.target.currentTime * 1000) / 250) * 250);
-    ctx.setTime(current);
-  };
+  //   const handleTimeUpdate = (e) => {
+  //     let current = Math.round((e.target.currentTime * 1000) / 250) * 250;
+  //     ctx.setTime(current);
+  //   };
 
   const handleMouseMove = (e) => {
     let xAxis = (window.innerWidth / 2 - e.pageX) / 15;
@@ -29,6 +31,21 @@ export default function VideoPlayer() {
     setRotate({ transform: `rotateY(0deg) rotateX(0deg)`, transition: "0.5s" });
   };
 
+  const timer = () => {
+    const timestamp = videoTestRef.current.currentTime * 1000;
+    console.log(timestamp);
+    ctx.setTime(timestamp);
+    // setTimeout(() => {
+    //   const timestamp = videoTestRef.current.currentTime * 1000;
+    //   console.log(timestamp);
+    //   ctx.setTime(timestamp);
+    // }, 1000);
+  };
+
+  //   useEffect(() => {
+  //     timer();
+  //   }, [ctx.time]);
+
   return (
     <div className='video-outer-div'>
       <div
@@ -38,7 +55,7 @@ export default function VideoPlayer() {
         style={rotate}
         ref={videoRef}
       >
-        <video controls onTimeUpdate={handleTimeUpdate}>
+        <video controls onTimeUpdate={timer} ref={videoTestRef}>
           <source src={video} type='video/mp4' />
           Sorry, your browser doesn't support embedded videos.
         </video>
@@ -66,6 +83,7 @@ export default function VideoPlayer() {
           />
         </div>
       </div>
+      <Controls videoRef={videoTestRef} />
     </div>
   );
 }

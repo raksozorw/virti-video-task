@@ -11,7 +11,7 @@ export default function Image(props) {
     const oldCount = count;
     setTimeout(() => {
       setCount(oldCount + 1);
-    }, props.start + 10);
+    }, props.end - props.start + 10);
   };
 
   useEffect(() => {
